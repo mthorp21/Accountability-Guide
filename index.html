@@ -401,6 +401,22 @@
   .cultivate-item-name { font-size: 13px; font-weight: 500; color: var(--mb-teal); margin-bottom: 2px; }
   .cultivate-item-desc { font-size: 12px; color: #666; line-height: 1.5; }
 
+  /* BRIDGE GRID */
+  .bridge-grid { display: flex; flex-direction: column; gap: 10px; }
+  .bridge-row { display: grid; grid-template-columns: 100px 28px 1fr; align-items: center; gap: 8px; }
+  .bridge-tier { border-radius: 10px; padding: 0.75rem 0.875rem; text-align: center; }
+  .bridge-tier-pct { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; }
+  .bridge-arrow { text-align: center; font-size: 18px; color: var(--mb-sage); font-weight: 300; }
+  .bridge-quadrant { border-radius: 10px; padding: 0.75rem 0.875rem; }
+  .bridge-q-label { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+  .bridge-q-action { font-size: 12px; color: #666; line-height: 1.5; }
+
+  @media (max-width: 640px) {
+    .bridge-row { grid-template-columns: 88px 22px 1fr; gap: 6px; }
+    .bridge-tier-pct { font-size: 12px; }
+    .bridge-tier { padding: 0.625rem 0.5rem; }
+  }
+
   /* SCENARIOS */
   .scenario-eyebrow {
     background: var(--mb-sage-light);
@@ -1025,54 +1041,165 @@
   <div id="team" class="tab-section">
     <div class="section-eyebrow">Building the best team</div>
 
-    <div class="card">
-      <div class="tier-block">
-        <div class="tier-header">
-          <div class="tier-pct" style="color:#2d6b10;">Top 20%</div>
-          <div class="tier-track"><div class="tier-fill" style="width:100%; background:var(--mb-green);"></div></div>
+    <!-- BRIDGE CARD: tiers to matrix -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-title">How the tiers connect to the matrix</div>
+      <p style="font-size:13px; color:#666; line-height:1.65; margin-bottom:1.25rem;">Every tier on this page maps directly to a quadrant in the Can/Will matrix. The matrix tells you where someone is. The tier tells you what to do about it at scale.</p>
+      <div class="bridge-grid">
+        <div class="bridge-row">
+          <div class="bridge-tier" style="background:var(--mb-green-light); border:1.5px solid var(--mb-green);">
+            <div class="bridge-tier-pct" style="color:#2d6b10;">Top 20%</div>
+          </div>
+          <div class="bridge-arrow">→</div>
+          <div class="bridge-quadrant" style="background:var(--mb-green-light); border:0.5px solid var(--mb-green);">
+            <div class="bridge-q-label" style="color:#2d6b10;">Can + Will</div>
+            <div class="bridge-q-action">Protect, invest, develop into leaders</div>
+          </div>
         </div>
-        <div class="tier-desc">Your best people. High skill, high attitude. They carry culture and set the bar for everyone else. If you are not actively investing in them, you will lose them.</div>
-        <div class="tier-chips">
-          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Praise publicly</span>
-          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Reward meaningfully</span>
-          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Give more responsibility</span>
-          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Develop into mentors</span>
+        <div class="bridge-row">
+          <div class="bridge-tier" style="background:var(--mb-teal-light); border:1.5px solid var(--mb-teal);">
+            <div class="bridge-tier-pct" style="color:var(--mb-teal);">Middle 60%</div>
+          </div>
+          <div class="bridge-arrow">→</div>
+          <div class="bridge-quadrant" style="background:var(--mb-teal-light); border:0.5px solid var(--mb-teal);">
+            <div class="bridge-q-label" style="color:var(--mb-teal);">Can't + Will <span style="color:#999; font-weight:400;">or</span> Can + Won't</div>
+            <div class="bridge-q-action">Not a uniform group. Diagnose before coaching. Skill gap or attitude gap — they need different responses.</div>
+          </div>
         </div>
-      </div>
-      <hr class="tier-divider">
-      <div class="tier-block">
-        <div class="tier-header">
-          <div class="tier-pct" style="color:var(--mb-teal);">Middle 60%</div>
-          <div class="tier-track"><div class="tier-fill" style="width:60%; background:var(--mb-teal);"></div></div>
-        </div>
-        <div class="tier-desc">The majority of your team. Performing at an acceptable level with room to grow. Constant gentle pressure lives here. Clear direction and consistent coaching move people from this group to the top 20%.</div>
-        <div class="tier-chips">
-          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Coach consistently</span>
-          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Set clear expectations</span>
-          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Recognize improvement</span>
-        </div>
-      </div>
-      <hr class="tier-divider">
-      <div class="tier-block">
-        <div class="tier-header">
-          <div class="tier-pct" style="color:#b53c25;">Bottom 20%</div>
-          <div class="tier-track"><div class="tier-fill" style="width:20%; background:var(--mb-coral);"></div></div>
-        </div>
-        <div class="tier-desc">Performing below standard. Every day you keep someone here without active coaching, you are telling your top 20% that the standard is optional. Coach up or coach out. Both are acts of leadership.</div>
-        <div class="tier-chips">
-          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Diagnose the root cause</span>
-          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Set a clear action plan</span>
-          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Document all coaching</span>
-          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Decide with courage</span>
+        <div class="bridge-row">
+          <div class="bridge-tier" style="background:var(--mb-coral-light); border:1.5px solid var(--mb-coral);">
+            <div class="bridge-tier-pct" style="color:#b53c25;">Bottom 20%</div>
+          </div>
+          <div class="bridge-arrow">→</div>
+          <div class="bridge-quadrant" style="background:var(--mb-coral-light); border:0.5px solid var(--mb-coral);">
+            <div class="bridge-q-label" style="color:#b53c25;">Can't + Won't</div>
+            <div class="bridge-q-action">Often a Can + Won't Gardener the coaching conversation never caught. Coach out with urgency and dignity.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Mentor principle -->
-    <div class="card">
-      <div class="card-title">Mentor leadership</div>
-      <p style="font-size:13px; color:#666; line-height:1.65; margin-bottom:10px;">The goal of a great leader is to help people think highly of themselves. Ask not "how do I lead my team to success" but "how do others flourish as a result of my leadership?"</p>
-      <div class="pullquote">Mentors build mentors. Leaders build leaders. If every Gardener coaches the next one the way you coached them, the standard carries on forever.</div>
+    <!-- TOP 20% -->
+    <div class="convo-card" id="conv-top20">
+      <div class="convo-header" onclick="toggleConvo('top20')" style="border-left:4px solid var(--mb-green);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#2d6b10;">Can + Will</div>
+          <div class="convo-title" style="color:#2d6b10;">Top 20% — Your stars</div>
+          <div class="convo-sub">High skill, high attitude. They carry culture and set the bar.</div>
+        </div>
+        <div class="tier-track" style="width:80px; margin-left:auto; margin-right:12px; align-self:center;">
+          <div class="tier-fill" style="width:100%; background:var(--mb-green);"></div>
+        </div>
+        <div class="convo-chevron" id="chev-top20">＋</div>
+      </div>
+      <div class="convo-body" id="body-top20">
+        <div class="convo-section-label">Who this is</div>
+        <p class="convo-p">This Gardener shows up every shift with skill and attitude. They are your Can/Will quadrant in action — they know the job and they choose to give it everything. If you are spending all your management energy on the bottom 20%, you are neglecting the people who are actually running your restaurant. That is a leadership failure, not a staffing problem.</p>
+
+        <div class="convo-section-label">What investment looks like at Morning Belle</div>
+        <ul class="convo-list">
+          <li><strong>Trainer role.</strong> Assign them to onboard new Gardeners. Not as babysitters — as standard-setters. The way they do the job becomes the way the next person learns it.</li>
+          <li><strong>Section ownership.</strong> Give them the same section consistently so they can build guest relationships. Top 20% Gardeners turn one-time guests into regulars.</li>
+          <li><strong>Public recognition.</strong> Call it out in pre-shift. "The way [name] handled that table on Saturday is exactly what we are building here." Say it out loud, in front of the team.</li>
+          <li><strong>First consideration for scheduling.</strong> The best shifts, the best sections, the first call when you need coverage. Make it known that performance has a tangible upside.</li>
+          <li><strong>Development conversations.</strong> Ask them where they want to go. "Do you want to be a trainer? Do you want to move into a supervisory role? What would that look like for you?" Then follow through.</li>
+        </ul>
+
+        <div class="convo-section-label">The risk if you ignore them</div>
+        <div class="convo-script">
+          <div class="script-label">What happens:</div>
+          <p class="script-text">Your top performers notice when the standard is not enforced for others. They are covering slack, carrying sections, and setting the example — while watching teammates get the same outcome for doing less. That frustration is quiet at first. Then they stop going above and beyond. Then they leave. You will not always see it coming.</p>
+        </div>
+        <div class="convo-note" style="background:var(--mb-green-light); border-left:3px solid var(--mb-green);">
+          <strong>The rule:</strong> Praise more than you criticize. For every correction you give in a shift, find something real to recognize. Your top 20% needs to hear it from you, specifically and consistently.
+        </div>
+      </div>
+    </div>
+
+    <!-- MIDDLE 60% -->
+    <div class="convo-card" id="conv-mid60">
+      <div class="convo-header" onclick="toggleConvo('mid60')" style="border-left:4px solid var(--mb-teal);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:var(--mb-teal);">Can't + Will or Can + Won't</div>
+          <div class="convo-title" style="color:var(--mb-teal);">Middle 60% — Not a uniform group</div>
+          <div class="convo-sub">Acceptable performance with room to grow. Diagnose before you coach.</div>
+        </div>
+        <div class="tier-track" style="width:80px; margin-left:auto; margin-right:12px; align-self:center;">
+          <div class="tier-fill" style="width:60%; background:var(--mb-teal);"></div>
+        </div>
+        <div class="convo-chevron" id="chev-mid60">＋</div>
+      </div>
+      <div class="convo-body" id="body-mid60">
+        <div class="convo-section-label">Who this is — and why it matters to get it right</div>
+        <p class="convo-p">The middle 60% is the most important group to understand correctly, because it is not one type of person. It splits into two distinct quadrants and they need completely different coaching approaches. Getting them confused is one of the most common management mistakes.</p>
+
+        <div class="convo-section-label" style="color:var(--mb-teal);">Type 1: Can't + Will — skill gap, right attitude</div>
+        <p class="convo-p" style="margin-bottom:8px;">This Gardener wants to be here and tries hard. The inconsistency is about capability, not commitment. They do not yet have the skill to perform at the top 20% level, but the attitude is there to build on.</p>
+        <ul class="convo-list">
+          <li><strong>Pair with a top 20% trainer</strong> and give them specific, time-bound skill targets. "By end of next week, I want to see you suggestive-selling on every table without prompting."</li>
+          <li><strong>Check in daily.</strong> Short, specific, encouraging. "How did that go today? What felt hard? Here is what I noticed."</li>
+          <li><strong>Praise every visible step forward immediately.</strong> Skill-building requires confidence. Your recognition accelerates it.</li>
+          <li><strong>This Gardener is on a path to the top 20%</strong> if you invest correctly. Do not let them drift because you are busy with harder problems.</li>
+        </ul>
+
+        <div class="convo-section-label" style="color:#7a4800;">Type 2: Can + Won't — skill present, attitude inconsistent</div>
+        <p class="convo-p" style="margin-bottom:8px;">This Gardener can do the job. You have seen it. But they choose not to consistently. This is an attitude or motivation issue. It requires a direct conversation about why, not a training plan.</p>
+        <ul class="convo-list">
+          <li><strong>Do not assign a trainer.</strong> They do not need training. Sending them back through onboarding sends the wrong message and wastes a trainer's time.</li>
+          <li><strong>Have the direct conversation.</strong> "I have seen you do this right. I need to understand what is getting in the way." Then listen before you coach.</li>
+          <li><strong>Name the impact.</strong> "When you are inconsistent, it creates extra work for your teammates and an uneven experience for guests. That is not fair to either of them."</li>
+          <li><strong>Watch the pattern.</strong> A Can + Won't Gardener who does not move with constant gentle pressure becomes your next bottom 20% problem. Do not wait.</li>
+        </ul>
+
+        <div class="convo-note" style="background:var(--mb-teal-light); border-left:3px solid var(--mb-teal);">
+          <strong>The key question before every middle-60% coaching conversation:</strong> Is this a skill problem or an attitude problem? The answer determines everything about how you respond. Ask it every time.
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM 20% -->
+    <div class="convo-card" id="conv-bot20">
+      <div class="convo-header" onclick="toggleConvo('bot20')" style="border-left:4px solid var(--mb-coral);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#b53c25;">Can't + Won't</div>
+          <div class="convo-title" style="color:var(--mb-coral);">Bottom 20% — Coach out</div>
+          <div class="convo-sub">Below standard with no improvement. Every day you wait costs your top 20% something.</div>
+        </div>
+        <div class="tier-track" style="width:80px; margin-left:auto; margin-right:12px; align-self:center;">
+          <div class="tier-fill" style="width:20%; background:var(--mb-coral);"></div>
+        </div>
+        <div class="convo-chevron" id="chev-bot20">＋</div>
+      </div>
+      <div class="convo-body" id="body-bot20">
+        <div class="convo-section-label">Who this is</div>
+        <p class="convo-p">This is your Can't + Won't quadrant. Often, this is a Can + Won't Gardener that was never coached directly enough, long enough. The attitude did not improve because the pressure was never real. Now the skill has atrophied or was never there to begin with. Either way, the result is the same: below standard performance with no meaningful movement toward improvement.</p>
+
+        <div class="convo-section-label">What keeping them costs</div>
+        <ul class="convo-list">
+          <li><strong>Your top 20% absorbs their slack every shift.</strong> Extra tables, covered sections, picked-up side work. It adds up and they notice.</li>
+          <li><strong>Your middle 60% uses them as a benchmark.</strong> If the bottom 20% can stay, "good enough" becomes the visible standard.</li>
+          <li><strong>Your guests feel it.</strong> Inconsistent service is not invisible. It shows up in reviews, repeat visit rates, and server tip averages.</li>
+          <li><strong>Your own credibility as a leader is at stake.</strong> Your team watches what you allow. What you allow is what you are endorsing.</li>
+        </ul>
+
+        <div class="convo-section-label">The right sequence before acting</div>
+        <ul class="convo-list">
+          <li>Confirm this is not a Can't + Will situation in disguise. Have you actually provided the training and tools? If not, that comes first.</li>
+          <li>Confirm you have had at least two documented conversations with specific standards and specific follow-up dates.</li>
+          <li>Confirm the expectation was stated clearly — not implied, not hinted at, not buried in a general pre-shift note.</li>
+          <li>If all three are true and nothing has changed, you have done your part. The next conversation is the accountability conversation.</li>
+        </ul>
+
+        <div class="convo-section-label">What the accountability conversation sounds like</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"We have talked about [specific behavior] before and I have not seen the change I need. I want to be direct: if this does not improve by [specific date], I am going to need to make a change. I am not trying to surprise you — I want you to know exactly where we are and what needs to happen."</p>
+        </div>
+
+        <div class="convo-note" style="background:var(--mb-coral-light); border-left:3px solid var(--mb-coral);">
+          <strong>Parting with someone is an act of leadership, not a failure.</strong> Keeping someone in the bottom 20% without consequence is the failure — of your team, your top performers, and your guests. Do it with dignity. Do it once you have done the work. But do it.
+        </div>
+      </div>
     </div>
 
     <!-- Cultivate: what we provide + what we ask -->
