@@ -579,6 +579,28 @@
 
   <!-- TAB: ACCOUNTABILITY -->
   <div id="accountability" class="tab-section">
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-title">The salt shaker standard</div>
+      <div class="saltshaker-row">
+        <div class="shaker-node">
+          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
+          <div class="shaker-label">Standard met</div>
+        </div>
+        <div class="shaker-arrow">→</div>
+        <div class="shaker-node">
+          <div class="shaker-circle off"><div class="shaker-inner" style="background:var(--mb-coral);"></div></div>
+          <div class="shaker-label">Standard missed</div>
+        </div>
+        <div class="shaker-arrow">→</div>
+        <div class="shaker-node">
+          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
+          <div class="shaker-label">Coach back to center</div>
+        </div>
+      </div>
+      <div class="pullquote" style="margin-top:1rem; margin-bottom:0;">Every time the standard slips, your job is to coach the Gardener back to center. Not tomorrow. Not after the rush. Now, in the moment. Coaching is correction with dignity.</div>
+    </div>
+
     <div class="section-eyebrow">The Oz Principle</div>
 
     <div class="card">
@@ -616,45 +638,105 @@
     </div>
 
     <div class="section-eyebrow">Above the line vs below the line</div>
-    <div class="line-grid">
-      <div class="line-box above">
-        <div class="line-box-label" style="color:#2d6b10;">Above the line</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Take ownership immediately</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Acknowledge the gap in standards</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Coach the team member with dignity</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Follow through on every commitment</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Center the salt shaker, every time</div>
+
+    <div class="convo-card" id="conv-aboveline">
+      <div class="convo-header" onclick="toggleConvo('aboveline')" style="border-left:4px solid var(--mb-green);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#2d6b10;">Ownership behaviors</div>
+          <div class="convo-title" style="color:#2d6b10;">Above the line — How to praise it</div>
+          <div class="convo-sub">Take ownership. Coach with dignity. Center the salt shaker every time.</div>
+        </div>
+        <div class="convo-chevron" id="chev-aboveline">＋</div>
       </div>
-      <div class="line-box below">
-        <div class="line-box-label" style="color:#b53c25;">Below the line</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Wait and see — someone else will fix it</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Cover your tail ("the kitchen messed up")</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Ignore or deny the issue</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Finger pointing at others</div>
-        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>"It's not my job"</div>
+      <div class="convo-body" id="body-aboveline">
+
+        <div class="convo-section-label">What above the line looks like</div>
+        <ul class="convo-list">
+          <li>Takes ownership of a problem immediately, without being asked.</li>
+          <li>Acknowledges a gap in the standard and addresses it on the spot.</li>
+          <li>Coaches a teammate with dignity — direct, clear, and without humiliating them.</li>
+          <li>Follows through on every commitment they make to a guest or a teammate.</li>
+          <li>Centers the salt shaker every time, even on a slammed Saturday.</li>
+        </ul>
+
+        <div class="convo-section-label">Why praising it matters</div>
+        <p class="convo-p">Above the line behavior is easy to miss because it looks like the job being done normally. It is not. It is the job being done at the standard you are trying to build. If you only notice it when it is missing, you are managing failure instead of building culture. Praising above the line behavior in the moment tells your entire team what the bar looks like.</p>
+
+        <div class="convo-section-label">How to praise it — in the moment</div>
+        <div class="convo-script">
+          <div class="script-label">Specific, public, right away:</div>
+          <p class="script-text">"I just want to call out what [name] did when that situation came up — instead of waiting for someone else to handle it, they owned it and took care of the guest immediately. That is exactly what above the line looks like. That is the standard."</p>
+        </div>
+        <div class="convo-script">
+          <div class="script-label">Direct, private, personal:</div>
+          <p class="script-text">"I saw how you handled that and I want you to know I noticed. That is not a small thing. You did not wait, you did not look around for someone else to step in. You just took care of it. That is the kind of Gardener we need more of here."</p>
+        </div>
+
+        <div class="convo-section-label">Praise rules at Morning Belle</div>
+        <ul class="convo-list">
+          <li><strong>Be specific.</strong> "Good job today" means nothing. "The way you handled table 12 when the order came out wrong — that was above the line" means everything.</li>
+          <li><strong>Be immediate.</strong> Praise at the end of a shift is better than nothing. Praise in the moment is what builds the behavior.</li>
+          <li><strong>Be public when it benefits the team.</strong> Calling it out in pre-shift or during a team moment sets the visible standard for everyone, not just the person you are praising.</li>
+          <li><strong>Never manufacture it.</strong> Gardeners can tell the difference between recognition that is earned and recognition that is routine. Only say it when you mean it.</li>
+        </ul>
+
+        <div class="convo-note" style="background:var(--mb-green-light); border-left:3px solid var(--mb-green);">
+          <strong>The ratio matters.</strong> If you are correcting more than you are praising, you are either not looking for the right things, or you have a deeper team problem that needs addressing. Both are worth examining.
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title">The salt shaker standard</div>
-      <div class="saltshaker-row">
-        <div class="shaker-node">
-          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
-          <div class="shaker-label">Standard met</div>
+    <div class="convo-card" id="conv-belowline">
+      <div class="convo-header" onclick="toggleConvo('belowline')" style="border-left:4px solid var(--mb-coral);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#b53c25;">Avoidance behaviors</div>
+          <div class="convo-title" style="color:var(--mb-coral);">Below the line — How to address it</div>
+          <div class="convo-sub">Wait and see. Finger pointing. Cover your tail. "It's not my job."</div>
         </div>
-        <div class="shaker-arrow">→</div>
-        <div class="shaker-node">
-          <div class="shaker-circle off"><div class="shaker-inner" style="background:var(--mb-coral);"></div></div>
-          <div class="shaker-label">Standard missed</div>
+        <div class="convo-chevron" id="chev-belowline">＋</div>
+      </div>
+      <div class="convo-body" id="body-belowline">
+
+        <div class="convo-section-label">What below the line looks like</div>
+        <ul class="convo-list">
+          <li><strong>Wait and see</strong> — "Someone else will handle it." The problem sits while the Gardener watches.</li>
+          <li><strong>Cover your tail</strong> — "The kitchen messed it up." "Manager A told me to do it that way." Deflecting responsibility onto others.</li>
+          <li><strong>Ignore or deny</strong> — "That table was fine. I checked on them." When the evidence says otherwise.</li>
+          <li><strong>Finger pointing</strong> — "Well, so-and-so doesn't do it either." Using others' behavior to justify their own.</li>
+          <li><strong>"It's not my job"</strong> — Refusing ownership because it falls outside a perceived lane.</li>
+        </ul>
+
+        <div class="convo-section-label">How to address it — in the moment</div>
+        <p class="convo-p">Below the line behavior addressed immediately is a coaching moment. Below the line behavior ignored is an endorsed standard. You do not need to make it a big moment — you need to make it a clear one.</p>
+
+        <div class="convo-script">
+          <div class="script-label">For wait and see / "it's not my job":</div>
+          <p class="script-text">"I need you to own that in the moment. When you see a problem, your job is to take care of it — not to wait for someone else to catch it. I am not asking you to fix everything alone. I am asking you to take the first step every time."</p>
         </div>
-        <div class="shaker-arrow">→</div>
-        <div class="shaker-node">
-          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
-          <div class="shaker-label">Coach back to center</div>
+        <div class="convo-script">
+          <div class="script-label">For finger pointing / cover your tail:</div>
+          <p class="script-text">"I hear you. And right now I want to focus on your role in this. What could you have done differently? Not what they did — what could you have done? That is where we are going to start."</p>
+        </div>
+        <div class="convo-script">
+          <div class="script-label">For ignore or deny:</div>
+          <p class="script-text">"I want to give you the benefit of the doubt, and I also want to be honest with you about what I observed. Here is what I saw: [specific situation]. I am not here to argue about it — I am here to make sure it does not happen again. What do you think got in the way?"</p>
+        </div>
+
+        <div class="convo-section-label">When it becomes a pattern</div>
+        <p class="convo-p">A single below the line moment is a coaching opportunity. Three of the same behavior is a pattern. A pattern requires a direct conversation with documentation, a clear expectation, and a specific follow-up date. At that point you are no longer in a teaching moment — you are in an accountability conversation.</p>
+        <ul class="convo-list">
+          <li>Name the pattern explicitly. "This is the third time I have seen you respond this way when something goes wrong."</li>
+          <li>Connect it to impact. "When you point to someone else, the guest's problem does not get solved and your teammates absorb the work. That is not fair to either of them."</li>
+          <li>Ask for ownership. "What are you going to do differently starting today?"</li>
+          <li>Set a follow-up. "I am going to check in with you on this at the end of your next shift. Not to catch you — to support you."</li>
+        </ul>
+
+        <div class="convo-note" style="background:var(--mb-coral-light); border-left:3px solid var(--mb-coral);">
+          <strong>Below the line behavior that goes unaddressed becomes your culture.</strong> Every Gardener who witnesses you walking past it learns that it is acceptable. You do not have to make it dramatic — you have to make it consistent.
         </div>
       </div>
-      <p style="font-size:13px; color:#666; line-height:1.65;">Every time the standard slips, your job is to coach the Gardener back to center. Not tomorrow. Not after the rush. Now. Coaching is correction with dignity.</p>
     </div>
+
   </div>
 
   <!-- TAB: CGP -->
