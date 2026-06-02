@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Belle | Manager Accountability Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mb-green: #99C961;
+    --mb-yellow: #ffde5c;
+    --mb-coral: #fc826d;
+    --mb-teal: #3c5c68;
+    --mb-charcoal: #4d4d4d;
+    --mb-amber: #fbaf41;
+    --mb-sage: #9bc4bc;
+    --mb-burnt: #d57136;
+    --mb-orange: #f46e3b;
+    --mb-green-light: #eef7e4;
+    --mb-teal-light: #e8f2f4;
+    --mb-coral-light: #fef0ed;
+    --mb-amber-light: #fef6e6;
+    --mb-yellow-light: #fffbe8;
+    --mb-sage-light: #eef5f4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ef;
+    color: var(--mb-charcoal);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--mb-teal);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(60,92,104,0.18);
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 64px;
+  }
+  .logo-svg { flex-shrink: 0; }
+  .header-titles { flex: 1; }
+  .header-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .header-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 1px;
+  }
+  .rainbow-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--mb-green) 0%, var(--mb-yellow) 25%, var(--mb-amber) 45%, var(--mb-coral) 70%, var(--mb-sage) 100%);
+  }
+
+  /* LAYOUT */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* GOALS HERO — below header, above tabs */
+  .goals-hero {
+    background: var(--mb-teal);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .goals-hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(153,201,97,0.12);
+  }
+  .goals-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 60px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,222,92,0.08);
+  }
+  .goals-hero-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--mb-green);
+    margin-bottom: 6px;
+  }
+  .goals-hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .goals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .goals-card {
+    background: rgba(255,255,255,0.08);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .goals-card-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--mb-green);
+    margin-bottom: 6px;
+  }
+  .goals-card-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+  }
+  .goals-footer {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid rgba(255,255,255,0.15);
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV TABS */
+  .nav-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .tab-btn {
+    padding: 9px 16px;
+    border-radius: 24px;
+    border: 1.5px solid #d4cfc8;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #fff;
+    color: var(--mb-charcoal);
+    transition: all 0.18s ease;
+  }
+  .tab-btn:hover { border-color: var(--mb-teal); color: var(--mb-teal); }
+  .tab-btn.active { background: var(--mb-teal); color: #fff; border-color: var(--mb-teal); }
+
+  /* SECTIONS */
+  .tab-section { display: none; }
+  .tab-section.active { display: block; }
+
+  /* CARDS */
+  .card {
+    background: #fff;
+    border: 0.5px solid #e8e4de;
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--mb-teal);
+    margin-bottom: 1rem;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mb-teal);
+    border-bottom: 2px solid var(--mb-green);
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+
+  /* OZ PRINCIPLE STEPS */
+  .steps-list { display: flex; flex-direction: column; gap: 12px; }
+  .step-row { display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: start; }
+  .step-bubble {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 500; flex-shrink: 0;
+  }
+  .step-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; color: var(--mb-teal); margin-bottom: 3px;
+  }
+  .step-body p { font-size: 13px; color: #666; line-height: 1.6; }
+
+  /* ABOVE/BELOW LINE */
+  .line-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
+  .line-box { border-radius: 10px; padding: 1.125rem; }
+  .line-box.above { background: var(--mb-green-light); border-left: 3px solid var(--mb-green); }
+  .line-box.below { background: var(--mb-coral-light); border-left: 3px solid var(--mb-coral); }
+  .line-box-label {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .line-item {
+    font-size: 12px; color: var(--mb-charcoal);
+    padding: 3px 0; display: flex; align-items: flex-start; gap: 7px; line-height: 1.45;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+
+  /* SALT SHAKER */
+  .saltshaker-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 24px; padding: 1.5rem; background: var(--mb-teal-light);
+    border-radius: 10px; margin-bottom: 1rem;
+  }
+  .shaker-node { text-align: center; }
+  .shaker-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto;
+  }
+  .shaker-circle.on { background: var(--mb-teal); }
+  .shaker-circle.off { border: 2px dashed var(--mb-coral); background: transparent; }
+  .shaker-inner { width: 20px; height: 20px; border-radius: 50%; }
+  .shaker-label { font-size: 11px; color: var(--mb-teal); font-weight: 500; margin-top: 6px; }
+  .shaker-arrow { font-size: 22px; color: var(--mb-sage); }
+
+  .pullquote {
+    border-left: 3px solid var(--mb-yellow);
+    padding: 0.75rem 1rem;
+    font-size: 13px; color: #666; line-height: 1.65; font-style: italic;
+    background: var(--mb-yellow-light);
+    border-radius: 0 8px 8px 0;
+    margin-top: 1rem;
+  }
+
+  /* CGP */
+  .cgp-trio { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 1.25rem; }
+  .cgp-block {
+    background: var(--mb-teal); border-radius: 12px; padding: 1.125rem; text-align: center;
+  }
+  .cgp-block .lbl { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--mb-green); margin-bottom: 6px; }
+  .cgp-block .desc { font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+
+  .miss-trio { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 1.25rem; }
+  .miss-block { border: 0.5px solid #e8e4de; border-radius: 10px; padding: 1rem; background: #fff; }
+  .miss-block .ml { font-size: 12px; font-weight: 500; color: var(--mb-teal); margin-bottom: 3px; }
+  .miss-block .ms { font-size: 11px; color: #999; margin-bottom: 4px; }
+  .miss-block .mr { font-size: 11px; font-weight: 500; color: var(--mb-coral); }
+
+  .comm-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 10px; }
+  .comm-kw { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--mb-teal); min-width: 48px; }
+  .comm-desc { font-size: 13px; color: #666; line-height: 1.55; padding-top: 2px; }
+
+  /* FOURSQUARE */
+  .foursquare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; background: #e8e4de;
+    border-radius: 16px; overflow: hidden; margin-bottom: 1.25rem;
+  }
+  .sq { padding: 1.375rem; background: #fff; }
+  .sq-eyebrow { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+  .sq-headline { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; }
+  .sq-body { font-size: 12px; color: #666; line-height: 1.55; }
+  .sq-tag {
+    display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 4px 12px; border-radius: 20px; margin-top: 10px;
+  }
+
+  /* STATIC MATRIX */
+  .static-matrix { margin-bottom: 1.5rem; }
+  .sm-row-labels { display: grid; grid-template-columns: 40px 1fr 1fr; gap: 3px; margin-bottom: 3px; }
+  .sm-corner { }
+  .sm-col-label {
+    text-align: center; font-size: 11px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--mb-teal); padding: 6px 0;
+    background: var(--mb-teal-light); border-radius: 6px 6px 0 0;
+  }
+  .sm-row { display: grid; grid-template-columns: 40px 1fr 1fr; gap: 3px; margin-bottom: 3px; }
+  .sm-row-label {
+    display: flex; align-items: center; justify-content: center;
+    writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);
+    font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--mb-teal); background: var(--mb-teal-light); border-radius: 6px;
+  }
+  .sm-cell {
+    border-radius: 10px; padding: 1rem 1.125rem;
+  }
+  .sm-green { background: var(--mb-green-light); border: 1.5px solid var(--mb-green); }
+  .sm-teal { background: var(--mb-teal-light); border: 0.5px solid #b0cfd5; }
+  .sm-amber { background: var(--mb-amber-light); border: 0.5px solid #f0c87a; }
+  .sm-coral { background: var(--mb-coral-light); border: 0.5px solid #f9b8ad; }
+  .sm-quadrant { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: #888; margin-bottom: 4px; }
+  .sm-name { font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 8px; }
+  .sm-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; color: #fff; }
+
+  /* EXPANDABLE CONVERSATION CARDS */
+  .convo-card {
+    background: #fff; border: 0.5px solid #e8e4de;
+    border-radius: 14px; margin-bottom: 10px; overflow: hidden;
+  }
+  .convo-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.125rem 1.25rem; cursor: pointer; gap: 12px;
+    transition: background 0.15s;
+  }
+  .convo-header:hover { background: #faf9f7; }
+  .convo-header-left { flex: 1; }
+  .convo-quadrant { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+  .convo-title { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 3px; }
+  .convo-sub { font-size: 12px; color: #888; line-height: 1.45; }
+  .convo-chevron {
+    font-size: 20px; font-weight: 300; color: var(--mb-teal);
+    flex-shrink: 0; transition: transform 0.2s; line-height: 1;
+  }
+  .convo-chevron.open { transform: rotate(45deg); }
+  .convo-body {
+    display: none; padding: 0 1.25rem 1.25rem; border-top: 0.5px solid #e8e4de;
+  }
+  .convo-body.open { display: block; }
+  .convo-section-label {
+    font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--mb-teal); margin: 1.125rem 0 6px;
+  }
+  .convo-p { font-size: 13px; color: #666; line-height: 1.65; }
+  .convo-script {
+    background: #f5f3ef; border-radius: 10px; padding: 1rem; margin: 6px 0;
+  }
+  .script-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mb-teal); margin-bottom: 6px; }
+  .script-text { font-size: 13px; color: var(--mb-charcoal); line-height: 1.7; font-style: italic; }
+  .convo-list { padding-left: 1rem; margin: 6px 0; }
+  .convo-list li { font-size: 13px; color: #666; line-height: 1.65; padding: 3px 0; }
+  .convo-note {
+    border-radius: 0 8px 8px 0; padding: 0.875rem 1rem;
+    font-size: 12px; color: var(--mb-charcoal); line-height: 1.6; margin-top: 1rem;
+  }
+  .convo-note strong { color: var(--mb-teal); }
+
+  /* CORE VALUES STRIP IN FOURSQUARE TAB */
+  .values-strip { margin-bottom: 1.25rem; }
+  .values-strip-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mb-teal); border-bottom: 2px solid var(--mb-green); padding-bottom: 5px; display: inline-block; margin-bottom: 1rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .value-card { background: #fff; border: 0.5px solid #e8e4de; border-radius: 10px; padding: 0.875rem 0.75rem; text-align: center; }
+  .value-card .vc-name { font-size: 12px; font-weight: 500; color: var(--mb-teal); margin-bottom: 4px; line-height: 1.3; }
+  .value-card .vc-desc { font-size: 10px; color: #888; line-height: 1.45; }
+
+  /* TEAM TIERS */
+  .tier-block { margin-bottom: 1.25rem; }
+  .tier-header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .tier-pct { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; min-width: 80px; }
+  .tier-track { flex: 1; height: 8px; border-radius: 4px; background: #eee; overflow: hidden; }
+  .tier-fill { height: 100%; border-radius: 4px; }
+  .tier-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 8px; }
+  .tier-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; }
+  .tier-divider { border: none; border-top: 0.5px solid #e8e4de; margin: 1.25rem 0; }
+
+  /* CULTIVATE COMMITMENT CARDS IN TEAM TAB */
+  .cultivate-section { margin-top: 1.5rem; }
+  .cultivate-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mb-teal); border-bottom: 2px solid var(--mb-yellow); padding-bottom: 5px; display: inline-block; margin-bottom: 1rem; }
+  .cultivate-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cultivate-col { }
+  .cultivate-col-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+  .cultivate-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+  .cultivate-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 14px;
+  }
+  .cultivate-item-name { font-size: 13px; font-weight: 500; color: var(--mb-teal); margin-bottom: 2px; }
+  .cultivate-item-desc { font-size: 12px; color: #666; line-height: 1.5; }
+
+  /* SCENARIOS */
+  .scenario-eyebrow {
+    background: var(--mb-sage-light);
+    border: 0.5px solid var(--mb-sage);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .scenario-eyebrow .se-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mb-teal); margin-bottom: 8px; }
+  .ask-values { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ask-val { background: #fff; border: 0.5px solid var(--mb-sage); border-radius: 20px; padding: 5px 12px; font-size: 12px; font-weight: 500; color: var(--mb-teal); }
+
+  .scenario-card { background: #fff; border: 0.5px solid #e8e4de; border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+  .scenario-q { font-size: 13px; font-weight: 500; color: var(--mb-teal); margin-bottom: 8px; }
+  .scenario-a { font-size: 13px; color: #666; line-height: 1.65; }
+  .scenario-new { background: var(--mb-green-light); border: 0.5px solid #b8dfa0; border-radius: 12px; padding: 1.25rem; margin-bottom: 10px; }
+  .new-badge {
+    display: inline-block; font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.07em; background: var(--mb-green); color: #fff;
+    padding: 3px 9px; border-radius: 20px; margin-bottom: 8px;
+  }
+  .callout-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1rem 0; }
+  .callout-col { background: #fff; border: 0.5px solid #e8e4de; border-radius: 10px; padding: 1rem; }
+  .callout-col .cc-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 7px; }
+  .callout-col .cc-item { font-size: 12px; color: #666; padding: 3px 0; display: flex; gap: 7px; align-items: flex-start; line-height: 1.45; }
+  .callout-footer { background: var(--mb-teal); border-radius: 10px; padding: 0.875rem 1rem; margin-top: 1rem; }
+  .callout-footer .cf-title { font-size: 12px; font-weight: 500; color: var(--mb-green); margin-bottom: 4px; }
+  .callout-footer .cf-body { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+
+  /* FOOTER ACCENT */
+  .footer-strip {
+    height: 5px;
+    background: linear-gradient(90deg, var(--mb-green), var(--mb-yellow), var(--mb-amber), var(--mb-coral), var(--mb-orange), var(--mb-teal));
+    border-radius: 3px;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="header-inner">
+    <svg class="logo-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#99C961"/>
+      <ellipse cx="22" cy="19" rx="9" ry="11" fill="white" opacity="0.95"/>
+      <path d="M22 32 L22 14" stroke="#3c5c68" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M22 22 C22 22 17 19 16 15" stroke="#3c5c68" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M22 25 C22 25 27 22 28 18" stroke="#3c5c68" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <div class="header-titles">
+      <div class="header-name">Morning Belle</div>
+      <div class="header-sub">Manager Accountability Training</div>
+    </div>
+  </div>
+  <div class="rainbow-bar"></div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- GOALS HERO -->
+  <div class="goals-hero">
+    <div class="goals-hero-label">Our Purpose</div>
+    <div class="goals-hero-headline">Strive to be better every day.</div>
+    <div class="goals-grid">
+      <div class="goals-card">
+        <div class="goals-card-label">How we measure success</div>
+        <div class="goals-card-text">Growing Morning Belle teams from within. Our Gardeners' personal growth. Growth in sales and profits.</div>
+      </div>
+      <div class="goals-card">
+        <div class="goals-card-label">For our Gardeners</div>
+        <div class="goals-card-text">We strive to be a great place to work, grow, have fun, and make money.</div>
+      </div>
+      <div class="goals-card">
+        <div class="goals-card-label">For our Guests</div>
+        <div class="goals-card-text">We strive to be the favorite place to eat, drink, relax, and be with friends and family.</div>
+      </div>
+    </div>
+    <div class="goals-footer">We accomplish these goals through craveable food and beverage, uncommon hospitality, and individual commitments to the relentless pursuit of quality and excellence.</div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('accountability', this)">Steps to accountability</button>
+    <button class="tab-btn" onclick="showTab('cgp', this)">Constant gentle pressure</button>
+    <button class="tab-btn" onclick="showTab('foursquare', this)">Can/will matrix</button>
+    <button class="tab-btn" onclick="showTab('team', this)">Top and bottom 20%</button>
+    <button class="tab-btn" onclick="showTab('scenarios', this)">Coaching scenarios</button>
+  </div>
+
+  <!-- TAB: ACCOUNTABILITY -->
+  <div id="accountability" class="tab-section active">
+    <div class="section-eyebrow">The Oz Principle</div>
+
+    <div class="card">
+      <div class="pullquote" style="margin-top:0; margin-bottom:1.25rem;">"A personal choice to rise above one's circumstances and demonstrate the ownership necessary for achieving desired results."</div>
+      <div class="steps-list">
+        <div class="step-row">
+          <div class="step-bubble" style="background:var(--mb-green); color:#fff;">1</div>
+          <div class="step-body">
+            <h3>See it</h3>
+            <p>Obtain others' perspectives. Communicate openly. Ask for and offer feedback. Hear the hard things to see reality clearly.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-bubble" style="background:var(--mb-sage); color:var(--mb-teal);">2</div>
+          <div class="step-body">
+            <h3>Own it</h3>
+            <p>Be personally invested. Learn from successes and failures. Align work with desired results. Act on the feedback you receive.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-bubble" style="background:var(--mb-amber); color:#fff;">3</div>
+          <div class="step-body">
+            <h3>Solve it</h3>
+            <p>Ask "What else can I do?" Overcome boundaries. Deal creatively with obstacles. Take the necessary risks.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-bubble" style="background:var(--mb-coral); color:#fff;">4</div>
+          <div class="step-body">
+            <h3>Do it</h3>
+            <p>Do what you say you'll do. Focus on top priorities. Stay above the line. Sustain an environment of trust.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-eyebrow">Above the line vs below the line</div>
+    <div class="line-grid">
+      <div class="line-box above">
+        <div class="line-box-label" style="color:#2d6b10;">Above the line</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Take ownership immediately</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Acknowledge the gap in standards</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Coach the team member with dignity</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Follow through on every commitment</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-green);"></span>Center the salt shaker, every time</div>
+      </div>
+      <div class="line-box below">
+        <div class="line-box-label" style="color:#b53c25;">Below the line</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Wait and see — someone else will fix it</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Cover your tail ("the kitchen messed up")</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Ignore or deny the issue</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>Finger pointing at others</div>
+        <div class="line-item"><span class="dot" style="background:var(--mb-coral);"></span>"It's not my job"</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The salt shaker standard</div>
+      <div class="saltshaker-row">
+        <div class="shaker-node">
+          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
+          <div class="shaker-label">Standard met</div>
+        </div>
+        <div class="shaker-arrow">→</div>
+        <div class="shaker-node">
+          <div class="shaker-circle off"><div class="shaker-inner" style="background:var(--mb-coral);"></div></div>
+          <div class="shaker-label">Standard missed</div>
+        </div>
+        <div class="shaker-arrow">→</div>
+        <div class="shaker-node">
+          <div class="shaker-circle on"><div class="shaker-inner" style="background:var(--mb-green);"></div></div>
+          <div class="shaker-label">Coach back to center</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#666; line-height:1.65;">Every time the standard slips, your job is to coach the Gardener back to center. Not tomorrow. Not after the rush. Now. Coaching is correction with dignity.</p>
+    </div>
+  </div>
+
+  <!-- TAB: CGP -->
+  <div id="cgp" class="tab-section">
+    <div class="section-eyebrow">Constant gentle pressure</div>
+    <div class="cgp-trio">
+      <div class="cgp-block"><div class="lbl">Constant</div><div class="desc">Be specific. Bring it up and correct every time. Inconsistency validates the behavior.</div></div>
+      <div class="cgp-block"><div class="lbl">Gentle</div><div class="desc">Never correct in a way that denies someone their dignity. Coaching is correction with dignity.</div></div>
+      <div class="cgp-block"><div class="lbl">Pressure</div><div class="desc">Standards are standards. Bring the action back to center. No exceptions for busy shifts.</div></div>
+    </div>
+
+    <div class="section-eyebrow">What happens when you miss one</div>
+    <div class="miss-trio">
+      <div class="miss-block"><div class="ml">Constant + Gentle</div><div class="ms">No pressure</div><div class="mr">No growth. Team lacks drive and passion.</div></div>
+      <div class="miss-block"><div class="ml">Gentle + Pressure</div><div class="ms">Not consistent</div><div class="mr">Mixed messages. Rules feel optional.</div></div>
+      <div class="miss-block"><div class="ml">Constant + Pressure</div><div class="ms">Not gentle</div><div class="mr">Burnout. Loss of graciousness.</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Communication is key</div>
+      <p style="font-size:13px; color:#666; line-height:1.65; margin-bottom:1.25rem;">Communication has as much to do with context as content. Three questions before every coaching moment:</p>
+      <div class="comm-row"><div class="comm-kw">Who</div><div class="comm-desc">Who needs to know this, and is this the right time and place to say it?</div></div>
+      <div class="comm-row"><div class="comm-kw">When</div><div class="comm-desc">If the moment passes without correction, you have validated the behavior.</div></div>
+      <div class="comm-row"><div class="comm-kw">Why</div><div class="comm-desc">The team member must understand why the standard exists, not just that they missed it.</div></div>
+    </div>
+  </div>
+
+  <!-- TAB: FOURSQUARE -->
+  <div id="foursquare" class="tab-section">
+
+    <!-- Core Values woven in above the matrix -->
+    <div class="values-strip">
+      <div class="values-strip-label">Core values the matrix protects</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="vc-name">Uncommon Hospitality</div>
+          <div class="vc-desc">Seeing things through the unique perspectives of Gardeners and Guests</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Run It Like You Own It</div>
+          <div class="vc-desc">Self-responsibility, initiative, and pride in your work</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Sky Is The Limit</div>
+          <div class="vc-desc">Investing in the advancement of Gardeners who make our purpose come to life</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Collective Genius</div>
+          <div class="vc-desc">We achieve more through teamwork and owning the experience together</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">We Love What We Do</div>
+          <div class="vc-desc">Passion, team spirit, focus, dedication, and positivity in everything</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-eyebrow">The can/will matrix</div>
+
+    <!-- STATIC MATRIX — always visible, mobile-safe -->
+    <div class="static-matrix">
+      <div class="sm-row-labels">
+        <div class="sm-corner"></div>
+        <div class="sm-col-label">Can</div>
+        <div class="sm-col-label">Can't</div>
+      </div>
+      <div class="sm-row">
+        <div class="sm-row-label">Will</div>
+        <div class="sm-cell sm-green">
+          <div class="sm-quadrant">Can + will</div>
+          <div class="sm-name" style="color:#2d6b10;">Your stars</div>
+          <span class="sm-tag" style="background:var(--mb-green); color:#fff;">Praise and grow</span>
+        </div>
+        <div class="sm-cell sm-teal">
+          <div class="sm-quadrant">Can't + will</div>
+          <div class="sm-name" style="color:var(--mb-teal);">Will without skill</div>
+          <span class="sm-tag" style="background:var(--mb-teal); color:#fff;">Train and develop</span>
+        </div>
+      </div>
+      <div class="sm-row">
+        <div class="sm-row-label">Won't</div>
+        <div class="sm-cell sm-amber">
+          <div class="sm-quadrant">Can + won't</div>
+          <div class="sm-name" style="color:#7a4800;">Skill without will</div>
+          <span class="sm-tag" style="background:var(--mb-amber); color:#fff;">Coach the why</span>
+        </div>
+        <div class="sm-cell sm-coral">
+          <div class="sm-quadrant">Can't + won't</div>
+          <div class="sm-name" style="color:#b53c25;">No path forward</div>
+          <span class="sm-tag" style="background:var(--mb-coral); color:#fff;">Coach out</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPANDABLE CONVERSATION CARDS -->
+    <div class="section-eyebrow" style="margin-top:1.75rem;">Conversation guides — tap to expand</div>
+
+    <div class="convo-card" id="conv-canwill">
+      <div class="convo-header" onclick="toggleConvo('canwill')" style="border-left:4px solid var(--mb-green);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#2d6b10;">Can + will</div>
+          <div class="convo-title" style="color:var(--mb-green);">Your stars — Praise and grow</div>
+          <div class="convo-sub">Capable and committed. Top 20%. Lives "Sky Is The Limit."</div>
+        </div>
+        <div class="convo-chevron" id="chev-canwill">＋</div>
+      </div>
+      <div class="convo-body" id="body-canwill">
+        <div class="convo-section-label">What's happening</div>
+        <p class="convo-p">This Gardener shows up, performs, helps others, and raises the floor of your shift. They don't need correction — they need investment. If you are only managing the problems on your team, you are ignoring the people who are carrying it.</p>
+
+        <div class="convo-section-label">How to open the conversation</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I want to be direct with you — you are one of the best Gardeners on this team and I don't say that enough. The way you handled [specific situation] last week is exactly what we are trying to build here. I want to make sure this place is working for you the same way you are working for it. What do you need from me?"</p>
+        </div>
+
+        <div class="convo-section-label">What to listen for</div>
+        <ul class="convo-list">
+          <li>Are they being recognized by their peers, not just you?</li>
+          <li>Do they have a clear path to grow — more shifts, a trainer role, a leadership track?</li>
+          <li>Are they carrying extra weight because others aren't pulling their share?</li>
+          <li>Is anything in their schedule or environment starting to grind them down?</li>
+        </ul>
+
+        <div class="convo-section-label">How to close</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I am going to give you more responsibility because you have earned it. That is not extra work for the same pay — we are going to talk about what that looks like. I need you here and I want to make sure you know that."</p>
+        </div>
+
+        <div class="convo-note" style="background:var(--mb-green-light); border-left:3px solid var(--mb-green);">
+          <strong>Remember:</strong> Praise more than you criticize. If you are not praising someone more than you correct them, one of two things is true: they are doing too many things wrong, or you have let them stay on the team longer than you should have. Either way, an adjustment is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="convo-card" id="conv-canwont">
+      <div class="convo-header" onclick="toggleConvo('canwont')" style="border-left:4px solid var(--mb-amber);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#7a4800;">Can + won't</div>
+          <div class="convo-title" style="color:var(--mb-amber);">Skill without will — Coach the why</div>
+          <div class="convo-sub">Has the ability. Chooses not to use it. A direct contradiction of "Run It Like You Own It."</div>
+        </div>
+        <div class="convo-chevron" id="chev-canwont">＋</div>
+      </div>
+      <div class="convo-body" id="body-canwont">
+        <div class="convo-section-label">What's happening</div>
+        <p class="convo-p">This is the most frustrating quadrant because the skill is there. The Gardener knows how to do the job. They are choosing not to. This is an attitude or motivation problem, and it requires you to coach the why before you coach the behavior. Correcting actions without addressing beliefs will not hold.</p>
+
+        <div class="convo-section-label">How to open the conversation</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I want to have an honest conversation with you because I think you are capable of more than what I am seeing right now. When [specific situation], you have the skills to handle that the right way — I have seen you do it. So I am not here to question your ability. I want to understand what is going on."</p>
+        </div>
+
+        <div class="convo-section-label">Questions that uncover the why</div>
+        <ul class="convo-list">
+          <li>"Is there something going on outside of work that is affecting how you show up here?"</li>
+          <li>"Is there something about this job or this team that is not working for you right now?"</li>
+          <li>"Do you feel like your effort here is being recognized? If not, tell me more."</li>
+          <li>"What would need to change for you to feel good about coming to work?"</li>
+        </ul>
+
+        <div class="convo-section-label">How to close — with pressure</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I hear you and I appreciate you being honest. Here is what I need from you going forward: [specific behavior]. I am going to check in with you on this every shift. Not because I am watching you — because I am invested in you. But I also need you to know that the standard does not change. If we cannot move this together, we are going to need to have a different conversation."</p>
+        </div>
+
+        <div class="convo-note" style="background:var(--mb-amber-light); border-left:3px solid var(--mb-amber);">
+          <strong>Document everything.</strong> Date, what was said, what the expectation is, and what the follow-up looks like. If this conversation happens more than twice without movement, you are in the bottom 20% decision zone, not the coaching zone.
+        </div>
+      </div>
+    </div>
+
+    <div class="convo-card" id="conv-cantwill">
+      <div class="convo-header" onclick="toggleConvo('cantwill')" style="border-left:4px solid var(--mb-sage);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:var(--mb-teal);">Can't + will</div>
+          <div class="convo-title" style="color:var(--mb-teal);">Will without skill — Train and develop</div>
+          <div class="convo-sub">Wants to succeed. Lacks the capability. This is a training problem, not a character problem.</div>
+        </div>
+        <div class="convo-chevron" id="chev-cantwill">＋</div>
+      </div>
+      <div class="convo-body" id="body-cantwill">
+        <div class="convo-section-label">What's happening</div>
+        <p class="convo-p">This Gardener has attitude and effort. The gap is skill. Before you coach, verify they actually know the standard. When actions are below standard, there are three reasons: they don't know the standard, they don't care about it, or they have low personal standards. This quadrant is the first case. That is on the system, not the Gardener.</p>
+
+        <div class="convo-section-label">How to open the conversation</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I want to check in on how things are going because I can see you are working hard. I also want to make sure we are setting you up with everything you need to succeed here. Can you walk me through how you handle [specific task]? I want to see where you are at so I can help you get better."</p>
+        </div>
+
+        <div class="convo-section-label">What to do after the conversation</div>
+        <ul class="convo-list">
+          <li>Assign a trainer from your top 20% to work alongside them — not to babysit, to mentor.</li>
+          <li>Give a specific, time-bound improvement target: "By next Friday, I want to see [behavior] on every table."</li>
+          <li>Check in daily. Short check-ins, not interrogations. "How did that feel today? What was hard?"</li>
+          <li>Praise every visible improvement immediately and specifically.</li>
+        </ul>
+
+        <div class="convo-section-label">How to close</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"You have the right attitude and that matters more than you know. The skill piece we can fix — that is my job as much as yours. I am going to pair you with [trainer name] this week. I want you to ask questions, not just observe. Let's set a check-in for [date] and see where you are."</p>
+        </div>
+
+        <div class="convo-note" style="background:var(--mb-teal-light); border-left:3px solid var(--mb-sage);">
+          <strong>This is the most coachable quadrant.</strong> Attitude is harder to teach than skill. Invest here with urgency and confidence. A Gardener who moves from can't/will to can/will becomes one of your strongest culture carriers because they remember what it took to get there.
+        </div>
+      </div>
+    </div>
+
+    <div class="convo-card" id="conv-cantwont">
+      <div class="convo-header" onclick="toggleConvo('cantwont')" style="border-left:4px solid var(--mb-coral);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#b53c25;">Can't + won't</div>
+          <div class="convo-title" style="color:var(--mb-coral);">No path forward — Coach out</div>
+          <div class="convo-sub">Neither skill nor attitude. Every day you wait, you send a message to your top 20%.</div>
+        </div>
+        <div class="convo-chevron" id="chev-cantwont">＋</div>
+      </div>
+      <div class="convo-body" id="body-cantwont">
+        <div class="convo-section-label">What's happening</div>
+        <p class="convo-p">This is the hardest quadrant to act on and the most costly to ignore. This Gardener is not performing and is not showing the attitude to improve. Every shift they work, your top performers absorb the slack. Every time you allow it without consequence, you tell your entire team that the standard is optional. That is a culture decision, not just a personnel one.</p>
+
+        <div class="convo-section-label">The accountability conversation</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"I want to be honest with you because you deserve that. We have had [number] conversations about [specific behavior] and I have not seen the change I need to see. I am not here to surprise you — I want to give you one more clear picture of what needs to happen. [Specific standard] needs to look like [specific behavior] starting now. I am going to check in with you every shift. If I do not see consistent improvement by [specific date], we are going to need to make a change."</p>
+        </div>
+
+        <div class="convo-section-label">What must be true before this conversation</div>
+        <ul class="convo-list">
+          <li>You have had at least two prior documented coaching conversations.</li>
+          <li>The standard was stated clearly and specifically — not implied.</li>
+          <li>You have given them a fair amount of time to improve.</li>
+          <li>You have ruled out a training gap — this is not a can't/will situation in disguise.</li>
+        </ul>
+
+        <div class="convo-section-label">If there is no improvement</div>
+        <div class="convo-script">
+          <div class="script-label">Manager says:</div>
+          <p class="script-text">"We have talked about this several times and I have not seen the change I need. This is not the right fit right now. I appreciate the time you have put in here and I wish you well — but I need to make a change for the health of the team."</p>
+        </div>
+
+        <div class="convo-note" style="background:var(--mb-coral-light); border-left:3px solid var(--mb-coral);">
+          <strong>Parting with someone is an act of leadership, not a failure.</strong> Keeping someone in this quadrant is a failure — of your team, your top performers, and ultimately your guests. Do it with dignity. Do it clearly. Do it once you have done the work. But do it.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.25rem;">
+      <div class="card-title">Before assigning a quadrant, ask three questions</div>
+      <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">1.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they know what the standard is? If not, this is a training problem, not a performance problem.</div></div>
+      <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">2.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they care about the standard? If not, understand the root cause before escalating.</div></div>
+      <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">3.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they have low personal standards? The most honest signal for the can't/won't quadrant.</div></div>
+    </div>
+  </div>
+
+  <!-- TAB: TEAM -->
+  <div id="team" class="tab-section">
+    <div class="section-eyebrow">Building the best team</div>
+
+    <div class="card">
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-pct" style="color:#2d6b10;">Top 20%</div>
+          <div class="tier-track"><div class="tier-fill" style="width:100%; background:var(--mb-green);"></div></div>
+        </div>
+        <div class="tier-desc">Your best people. High skill, high attitude. They carry culture and set the bar for everyone else. If you are not actively investing in them, you will lose them.</div>
+        <div class="tier-chips">
+          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Praise publicly</span>
+          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Reward meaningfully</span>
+          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Give more responsibility</span>
+          <span class="chip" style="background:var(--mb-green-light); color:#2d6b10;">Develop into mentors</span>
+        </div>
+      </div>
+      <hr class="tier-divider">
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-pct" style="color:var(--mb-teal);">Middle 60%</div>
+          <div class="tier-track"><div class="tier-fill" style="width:60%; background:var(--mb-teal);"></div></div>
+        </div>
+        <div class="tier-desc">The majority of your team. Performing at an acceptable level with room to grow. Constant gentle pressure lives here. Clear direction and consistent coaching move people from this group to the top 20%.</div>
+        <div class="tier-chips">
+          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Coach consistently</span>
+          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Set clear expectations</span>
+          <span class="chip" style="background:var(--mb-teal-light); color:var(--mb-teal);">Recognize improvement</span>
+        </div>
+      </div>
+      <hr class="tier-divider">
+      <div class="tier-block">
+        <div class="tier-header">
+          <div class="tier-pct" style="color:#b53c25;">Bottom 20%</div>
+          <div class="tier-track"><div class="tier-fill" style="width:20%; background:var(--mb-coral);"></div></div>
+        </div>
+        <div class="tier-desc">Performing below standard. Every day you keep someone here without active coaching, you are telling your top 20% that the standard is optional. Coach up or coach out. Both are acts of leadership.</div>
+        <div class="tier-chips">
+          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Diagnose the root cause</span>
+          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Set a clear action plan</span>
+          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Document all coaching</span>
+          <span class="chip" style="background:var(--mb-coral-light); color:#b53c25;">Decide with courage</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mentor principle -->
+    <div class="card">
+      <div class="card-title">Mentor leadership</div>
+      <p style="font-size:13px; color:#666; line-height:1.65; margin-bottom:10px;">The goal of a great leader is to help people think highly of themselves. Ask not "how do I lead my team to success" but "how do others flourish as a result of my leadership?"</p>
+      <div class="pullquote">Mentors build mentors. Leaders build leaders. If every Gardener coaches the next one the way you coached them, the standard carries on forever.</div>
+    </div>
+
+    <!-- Cultivate: what we provide + what we ask -->
+    <div class="cultivate-section">
+      <div class="cultivate-label">The Cultivate commitment</div>
+      <div class="card" style="margin-bottom:0;">
+        <div class="cultivate-pair">
+          <div class="cultivate-col">
+            <div class="cultivate-col-label" style="color:var(--mb-teal);">What we commit to give every Gardener</div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-teal-light);">🧭</div>
+              <div>
+                <div class="cultivate-item-name">Clear Direction</div>
+                <div class="cultivate-item-desc">Understanding of where we are headed and your role in getting us there</div>
+              </div>
+            </div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-green-light);">🌱</div>
+              <div>
+                <div class="cultivate-item-name">Superb Preparation</div>
+                <div class="cultivate-item-desc">The understanding, training, and tools to be the best Gardener you can be</div>
+              </div>
+            </div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-amber-light);">🤝</div>
+              <div>
+                <div class="cultivate-item-name">Unwavering Support</div>
+                <div class="cultivate-item-desc">Feedback to know where you stand, how to improve, accountability, and the support you need to grow</div>
+              </div>
+            </div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-sage-light);">🏡</div>
+              <div>
+                <div class="cultivate-item-name">Sense of Belonging</div>
+                <div class="cultivate-item-desc">An environment where you are a valued member of the team</div>
+              </div>
+            </div>
+          </div>
+          <div class="cultivate-col" style="border-left:0.5px solid #e8e4de; padding-left:1.25rem;">
+            <div class="cultivate-col-label" style="color:var(--mb-burnt);">What we ask every Gardener to give</div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-green-light);">🌿</div>
+              <div>
+                <div class="cultivate-item-name">Teamwork</div>
+                <div class="cultivate-item-desc">Doing your job well, helping others, asking for help before it is needed, and speaking up on behalf of Morning Belle</div>
+              </div>
+            </div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-amber-light);">⭐</div>
+              <div>
+                <div class="cultivate-item-name">Self-Responsibility</div>
+                <div class="cultivate-item-desc">Owning what you do, say, and achieve</div>
+              </div>
+            </div>
+            <div class="cultivate-item">
+              <div class="cultivate-icon" style="background:var(--mb-coral-light);">🎯</div>
+              <div>
+                <div class="cultivate-item-name">Own the Experience</div>
+                <div class="cultivate-item-desc">Insisting on quality and excellence from yourself and delivering Uncommon Hospitality for Gardeners and Guests</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: SCENARIOS -->
+  <div id="scenarios" class="tab-section">
+
+    <!-- Cultivate: what we ask as framing for scenarios -->
+    <div class="scenario-eyebrow">
+      <div class="se-label">The standard being coached to</div>
+      <div class="ask-values">
+        <span class="ask-val">Teamwork</span>
+        <span class="ask-val">Self-Responsibility</span>
+        <span class="ask-val">Own the Experience</span>
+        <span class="ask-val">Uncommon Hospitality</span>
+        <span class="ask-val">Run It Like You Own It</span>
+      </div>
+    </div>
+
+    <div class="scenario-card">
+      <div class="scenario-q">A Gardener is consistently late but always performs well during the shift.</div>
+      <div class="scenario-a">This is a "can/won't" situation. The skill is there. Coach the behavior directly: "Every time you are late, it shifts the load to your teammates before you arrive. That's not the standard here." Be constant. Be gentle. Apply pressure. If it continues after documented conversations, this becomes a parting decision.</div>
+    </div>
+
+    <div class="scenario-card">
+      <div class="scenario-q">A new Gardener is making repeated mistakes on the POS system.</div>
+      <div class="scenario-a">This is likely "can't/will." A training problem, not a performance problem. Before coaching, verify they actually know the standard. Assign a trainer from your top 20% to work alongside them. Give them a clear timeline for improvement and check in daily.</div>
+    </div>
+
+    <div class="scenario-card">
+      <div class="scenario-q">A strong team member is not getting recognized and seems disengaged.</div>
+      <div class="scenario-a">This is a leadership failure, not a performance problem. Praise more than you criticize. If you are not recognizing your top performers publicly and consistently, you are telling them their effort is invisible. Correct this immediately. Praise is free and it is powerful.</div>
+    </div>
+
+    <div class="scenario-card">
+      <div class="scenario-q">A team member blames the kitchen every time a guest complaint arises.</div>
+      <div class="scenario-a">Below the line behavior: finger pointing and cover your tail. This directly violates Self-Responsibility and Own the Experience. Coach the See It, Own It response directly. "What could you have done differently?" is the right question. Ownership is not about blame. It is about what you control and how you respond.</div>
+    </div>
+
+    <div class="scenario-card">
+      <div class="scenario-q">Nothing changes after multiple conversations with a low performer.</div>
+      <div class="scenario-a">You have done the work. You have been constant, gentle, and applied pressure. You have documented it. Keeping this person is a message to your entire team that standards are negotiable. Parting with someone is one of the hardest acts of leadership. It is also one of the most important.</div>
+    </div>
+
+    <div class="scenario-new">
+      <span class="new-badge">New</span>
+      <div style="font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:var(--mb-teal); margin-bottom:8px;">Attendance and reliability</div>
+      <div class="scenario-q">A Gardener calls off frequently, often on weekends or high-volume shifts.</div>
+      <div class="scenario-a" style="margin-bottom:1rem;">First, separate the pattern from the individual incident. A single callout is not a coaching moment. A pattern is. Your job is to see it clearly before you respond to it.</div>
+
+      <div class="callout-pair">
+        <div class="callout-col">
+          <div class="cc-label" style="color:#2d6b10;">First callout</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-green); margin-top:5px;"></span>Acknowledge it without penalty. Life happens.</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-green); margin-top:5px;"></span>Note the date, shift, and reason in your log.</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-green); margin-top:5px;"></span>No formal conversation needed at this stage.</div>
+        </div>
+        <div class="callout-col">
+          <div class="cc-label" style="color:#8a5200;">A pattern emerges</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-amber); margin-top:5px;"></span>Have the conversation directly and privately.</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-amber); margin-top:5px;"></span>Name the pattern without accusations: "I've noticed you've called off three of the last five Sundays."</div>
+          <div class="cc-item"><span class="dot" style="background:var(--mb-amber); margin-top:5px;"></span>Ask a genuine question before assuming intent.</div>
+        </div>
+      </div>
+
+      <div style="font-size:13px; font-weight:500; color:var(--mb-teal); margin:1rem 0 6px;">What to say in the coaching conversation</div>
+      <div class="pullquote" style="background:rgba(255,255,255,0.6);">"When you call off, your teammates carry your section. That creates a harder shift for them and a harder experience for our guests. I want to understand what's going on and figure out how we fix it together."</div>
+
+      <div style="font-size:13px; font-weight:500; color:var(--mb-teal); margin:1rem 0 8px;">Three things the conversation needs to uncover</div>
+      <div class="comm-row"><div style="font-size:15px; font-weight:500; color:var(--mb-green); min-width:20px;">1.</div><div style="font-size:13px; color:#555; line-height:1.6;">Is something real going on? A schedule conflict, personal situation, health issue? If so, solve it with them, not around them.</div></div>
+      <div class="comm-row"><div style="font-size:15px; font-weight:500; color:var(--mb-amber); min-width:20px;">2.</div><div style="font-size:13px; color:#555; line-height:1.6;">Do they understand the impact on teammates and guests? If not, make it concrete. This is an ownership conversation.</div></div>
+      <div class="comm-row" style="margin-bottom:1rem;"><div style="font-size:15px; font-weight:500; color:var(--mb-coral); min-width:20px;">3.</div><div style="font-size:13px; color:#555; line-height:1.6;">Is this a can/won't situation? If they understand the impact and the pattern continues, this is now an accountability decision, not a scheduling conversation.</div></div>
+
+      <div class="callout-footer">
+        <div class="cf-title">The standard is the standard on your best shift and your worst one</div>
+        <div class="cf-body">Your top 20% show up. They cover. They carry the team. Every time you let a callout pattern go unaddressed, you tax your best people and reward below the line behavior. That erodes culture faster than almost anything else.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-strip"></div>
+
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleConvo(id) {
+  var body = document.getElementById('body-' + id);
+  var chev = document.getElementById('chev-' + id);
+  var isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
