@@ -575,15 +575,15 @@
 
   <!-- NAV -->
   <div class="nav-tabs">
-    <button class="tab-btn active" onclick="showTab('accountability', this)">Steps to accountability</button>
-    <button class="tab-btn" onclick="showTab('cgp', this)">Constant gentle pressure</button>
-    <button class="tab-btn" onclick="showTab('foursquare', this)">Can/will matrix</button>
+    <button class="tab-btn active" onclick="showTab('foursquare', this)">Can/will matrix</button>
     <button class="tab-btn" onclick="showTab('team', this)">Top and bottom 20%</button>
+    <button class="tab-btn" onclick="showTab('cgp', this)">Constant gentle pressure</button>
+    <button class="tab-btn" onclick="showTab('accountability', this)">Steps to accountability</button>
     <button class="tab-btn" onclick="showTab('scenarios', this)">Coaching scenarios</button>
   </div>
 
   <!-- TAB: ACCOUNTABILITY -->
-  <div id="accountability" class="tab-section active">
+  <div id="accountability" class="tab-section">
     <div class="section-eyebrow">The Oz Principle</div>
 
     <div class="card">
@@ -672,10 +672,110 @@
     </div>
 
     <div class="section-eyebrow">What happens when you miss one</div>
-    <div class="miss-trio">
-      <div class="miss-block"><div class="ml">Constant + Gentle</div><div class="ms">No pressure</div><div class="mr">No growth. Team lacks drive and passion.</div></div>
-      <div class="miss-block"><div class="ml">Gentle + Pressure</div><div class="ms">Not consistent</div><div class="mr">Mixed messages. Rules feel optional.</div></div>
-      <div class="miss-block"><div class="ml">Constant + Pressure</div><div class="ms">Not gentle</div><div class="mr">Burnout. Loss of graciousness.</div></div>
+
+    <div class="convo-card" id="conv-nogp">
+      <div class="convo-header" onclick="toggleConvo('nogp')" style="border-left:4px solid var(--mb-coral);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#b53c25;">Missing pressure</div>
+          <div class="convo-title" style="color:var(--mb-coral);">Constant + Gentle only</div>
+          <div class="convo-sub">No growth. Team lacks drive and passion.</div>
+        </div>
+        <div class="convo-chevron" id="chev-nogp">＋</div>
+      </div>
+      <div class="convo-body" id="body-nogp">
+        <div class="convo-section-label">What it looks like</div>
+        <p class="convo-p">You correct every time and you do it kindly. But the salt shaker never moves back to center because there is no real consequence for missing the standard. The team reads this as the bar being optional. Over time, effort and performance drift downward and morale follows because your best Gardeners notice that everyone gets the same outcome regardless of how they perform.</p>
+
+        <div class="convo-section-label">Common signs you are here</div>
+        <ul class="convo-list">
+          <li>You have the same conversation with the same person multiple times without change.</li>
+          <li>You find yourself softening the message so much that the urgency disappears.</li>
+          <li>Your top performers seem frustrated or disengaged.</li>
+          <li>You avoid follow-up because you don't want another uncomfortable conversation.</li>
+        </ul>
+
+        <div class="convo-section-label">How to return to center</div>
+        <div class="convo-script">
+          <div class="script-label">What to add back:</div>
+          <p class="script-text">Name the consequence clearly and specifically. Not as a threat — as a reality. "I have brought this up before and I need you to understand that if this does not change, it affects your schedule, your standing on the team, and ultimately whether this is the right place for you."</p>
+        </div>
+        <ul class="convo-list">
+          <li>After each coaching conversation, write down what was said and what will happen if nothing changes. Say both parts out loud.</li>
+          <li>Set a specific follow-up date. Check in on that date no matter what.</li>
+          <li>Ask yourself: if this behavior continued for 90 more days, would you still have this person on the team? If the answer is no, the pressure needs to be in your next conversation, not your 10th.</li>
+          <li>Practice the closing line before the conversation. Saying it out loud once makes it easier to say in the moment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="convo-card" id="conv-noc">
+      <div class="convo-header" onclick="toggleConvo('noc')" style="border-left:4px solid var(--mb-amber);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#7a4800;">Missing constant</div>
+          <div class="convo-title" style="color:var(--mb-amber);">Gentle + Pressure only</div>
+          <div class="convo-sub">Mixed messages. Rules feel optional.</div>
+        </div>
+        <div class="convo-chevron" id="chev-noc">＋</div>
+      </div>
+      <div class="convo-body" id="body-noc">
+        <div class="convo-section-label">What it looks like</div>
+        <p class="convo-p">You coach well when you catch something, and you hold the standard when you do — but you don't catch it every time. You let it go on a busy Saturday. You see it and decide to address it later, and later never comes. The team learns that the standard only applies when you are watching, in the right mood, or have the time. That is not a standard. That is a preference.</p>
+
+        <div class="convo-section-label">Common signs you are here</div>
+        <ul class="convo-list">
+          <li>You correct the same behavior on Monday but not on Friday.</li>
+          <li>You tell yourself "I'll catch it next time" and then don't.</li>
+          <li>The team performs differently depending on who is managing the shift.</li>
+          <li>You feel like some team members only comply when you are present.</li>
+        </ul>
+
+        <div class="convo-section-label">How to return to center</div>
+        <div class="convo-script">
+          <div class="script-label">What to add back:</div>
+          <p class="script-text">Build a physical habit around correction. Walk the floor with intention. Create a pre-shift mental checklist of the top two or three standards you will watch for that day. When you see a miss, address it in the moment — not at the end of the shift, not in the next 1-on-1. Now.</p>
+        </div>
+        <ul class="convo-list">
+          <li>Identify the one or two behaviors you most often let slide. Name them. Put them on your radar before every shift.</li>
+          <li>After each shift, ask yourself: did I miss anything I should have addressed? Write it down and bring it up at the next interaction — not to reopen a wound, but to close the loop.</li>
+          <li>Use pre-shifts to reset the standard out loud. When the whole team hears the expectation at the start of the shift, correction mid-shift feels less personal and more expected.</li>
+          <li>Hold the standard equally across all team members. Inconsistency often shows up as favoritism, even when it is not intended.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="convo-card" id="conv-nog">
+      <div class="convo-header" onclick="toggleConvo('nog')" style="border-left:4px solid var(--mb-burnt);">
+        <div class="convo-header-left">
+          <div class="convo-quadrant" style="color:#7a3010;">Missing gentle</div>
+          <div class="convo-title" style="color:var(--mb-burnt);">Constant + Pressure only</div>
+          <div class="convo-sub">Burnout. Loss of graciousness.</div>
+        </div>
+        <div class="convo-chevron" id="chev-nog">＋</div>
+      </div>
+      <div class="convo-body" id="body-nog">
+        <div class="convo-section-label">What it looks like</div>
+        <p class="convo-p">You correct every time and you hold the line every time. But the delivery strips people of their dignity. Correction without care reads as criticism without investment. The team may comply in the short term, but trust erodes. Gardeners stop asking questions, stop taking initiative, and start looking for an exit. The standard is being enforced but the culture is being destroyed in the process.</p>
+
+        <div class="convo-section-label">Common signs you are here</div>
+        <ul class="convo-list">
+          <li>Team members go quiet when you walk into a room.</li>
+          <li>Gardeners are technically compliant but show no energy or ownership.</li>
+          <li>You are correcting the same people repeatedly but the relationship is getting worse, not better.</li>
+          <li>Turnover is higher than it should be for a team that knows the job.</li>
+        </ul>
+
+        <div class="convo-section-label">How to return to center</div>
+        <div class="convo-script">
+          <div class="script-label">What to add back:</div>
+          <p class="script-text">Before every correction, ask yourself one question: am I coaching this person or am I just correcting them? Coaching requires you to be on their side. Lead with what you observed, not what they did wrong. "I want to help you nail this" lands differently than "you did that wrong." Same standard. Completely different relationship.</p>
+        </div>
+        <ul class="convo-list">
+          <li>For every correction you give in a shift, find at least one thing to genuinely praise. Not manufactured — real. Train yourself to look for it.</li>
+          <li>Check your timing. Correcting someone in front of guests or peers removes their dignity. Pull them aside. Same message, delivered with respect.</li>
+          <li>After a coaching moment, follow up with that person later in the shift — not about the correction, just a normal check-in. It signals that the correction was about the behavior, not about them as a person.</li>
+          <li>Ask yourself honestly: do the people I lead know that I am in their corner? If you are not sure, that is your answer.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="card">
@@ -688,34 +788,7 @@
   </div>
 
   <!-- TAB: FOURSQUARE -->
-  <div id="foursquare" class="tab-section">
-
-    <!-- Core Values woven in above the matrix -->
-    <div class="values-strip">
-      <div class="values-strip-label">Core values the matrix protects</div>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="vc-name">Uncommon Hospitality</div>
-          <div class="vc-desc">Seeing things through the unique perspectives of Gardeners and Guests</div>
-        </div>
-        <div class="value-card">
-          <div class="vc-name">Run It Like You Own It</div>
-          <div class="vc-desc">Self-responsibility, initiative, and pride in your work</div>
-        </div>
-        <div class="value-card">
-          <div class="vc-name">Sky Is The Limit</div>
-          <div class="vc-desc">Investing in the advancement of Gardeners who make our purpose come to life</div>
-        </div>
-        <div class="value-card">
-          <div class="vc-name">Collective Genius</div>
-          <div class="vc-desc">We achieve more through teamwork and owning the experience together</div>
-        </div>
-        <div class="value-card">
-          <div class="vc-name">We Love What We Do</div>
-          <div class="vc-desc">Passion, team spirit, focus, dedication, and positivity in everything</div>
-        </div>
-      </div>
-    </div>
+  <div id="foursquare" class="tab-section active">
 
     <div class="section-eyebrow">The can/will matrix</div>
 
@@ -755,7 +828,7 @@
     </div>
 
     <!-- EXPANDABLE CONVERSATION CARDS -->
-    <div class="section-eyebrow" style="margin-top:1.75rem;">Conversation guides — tap to expand</div>
+    <div class="section-eyebrow" style="margin-top:1.75rem;">Tap to explore each quadrant</div>
 
     <div class="convo-card" id="conv-canwill">
       <div class="convo-header" onclick="toggleConvo('canwill')" style="border-left:4px solid var(--mb-green);">
@@ -918,6 +991,33 @@
       <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">1.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they know what the standard is? If not, this is a training problem, not a performance problem.</div></div>
       <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">2.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they care about the standard? If not, understand the root cause before escalating.</div></div>
       <div class="comm-row"><div style="font-size:16px; font-weight:500; color:var(--mb-teal); min-width:24px;">3.</div><div style="font-size:13px; color:#666; line-height:1.6;">Do they have low personal standards? The most honest signal for the can't/won't quadrant.</div></div>
+    </div>
+
+    <!-- Core Values — moved to bottom -->
+    <div class="values-strip" style="margin-top:0.5rem;">
+      <div class="values-strip-label">Core values the matrix protects</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="vc-name">Uncommon Hospitality</div>
+          <div class="vc-desc">Seeing things through the unique perspectives of Gardeners and Guests</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Run It Like You Own It</div>
+          <div class="vc-desc">Self-responsibility, initiative, and pride in your work</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Sky Is The Limit</div>
+          <div class="vc-desc">Investing in the advancement of Gardeners who make our purpose come to life</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">Collective Genius</div>
+          <div class="vc-desc">We achieve more through teamwork and owning the experience together</div>
+        </div>
+        <div class="value-card">
+          <div class="vc-name">We Love What We Do</div>
+          <div class="vc-desc">Passion, team spirit, focus, dedication, and positivity in everything</div>
+        </div>
+      </div>
     </div>
   </div>
 
